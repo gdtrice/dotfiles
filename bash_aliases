@@ -22,6 +22,7 @@ alias celery='./scripts/start_celeryd.sh'
 #---------------------------------
 # Git
 #--------------------------------
+alias amend='git commit --amend'
 alias co='git checkout '
 alias clean='git clean -f'
 alias delbranch='git branch -D '
