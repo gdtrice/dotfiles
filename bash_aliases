@@ -12,6 +12,7 @@ if [ -e ~/scratch.sh ]; then
 #-----------------------------------------------
 alias act='cd ~/projects/hearsay-activities'
 alias fan='cd ~/projects/HearsayLabs/fanmgmt'
+alias meals='cd ~/projects/hearsay-meals'
 alias debugdev='./run.sh manage.py runserver 0.0.0.0:8080 --settings=settings.gtrice'
 alias fix='sudo service uwsgi restart && sudo service nginx restart'
 alias shipit='./lgtm create'
