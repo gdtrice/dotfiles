@@ -8,7 +8,7 @@ set ts=4 sw=4 expandtab
 " Shortcut to toggle 'set list'
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬\ ,trail:•
 
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
