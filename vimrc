@@ -3,12 +3,13 @@ syntax on
 filetype plugin indent on
 
 let mapleader=","
+set encoding=utf-8
 set ts=4 sw=4 expandtab
 
 " Shortcut to toggle 'set list'
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬\ ,trail:•
+set listchars=tab:▸\ ,trail:•
 
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
@@ -20,6 +21,6 @@ function! Preserve(command)
   " Clean up: restore previous search history, and cursor position
   let @/=_s
   call cursor(l, c)
-endfunction 
+endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
