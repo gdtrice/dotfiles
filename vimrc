@@ -6,8 +6,7 @@ let mapleader=","
 set encoding=utf-8
 set ts=4 sw=4 expandtab
 
-" Shortcut to toggle 'set list'
-nmap <leader>l :set list!<CR>
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,trail:•
 
@@ -22,5 +21,23 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+
+" ----------------------------------------------------------------------------
+"   Visual
+" ----------------------------------------------------------------------------
+set incsearch
+set number
+
+" ----------------------------------------------------------------------------
+"   Custom mappings
+" ----------------------------------------------------------------------------
+command! WQ wq
+command! Wq wq
+command! Tabe tabe
+command! Tabp tabp
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
+
+" toggles
+nmap <leader>l :set list!<CR>
+nmap <leader>nm :set number!<CR>
