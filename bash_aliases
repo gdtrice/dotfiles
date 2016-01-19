@@ -12,14 +12,17 @@ if [ -e ~/scratch.sh ]; then
 #-----------------------------------------------
 alias act='cd ~/projects/hearsay-activities'
 alias fan='cd ~/projects/HearsayLabs/fanmgmt'
-alias meals='cd ~/projects/hearsay-meals'
 alias debugdev='./run.sh manage.py runserver 0.0.0.0:8080 --settings=settings.gtrice'
 alias fix='sudo service uwsgi restart && sudo service nginx restart'
+alias jas='~/projects/HearsayLabs/fanmgmt/run.sh run_jasmine.py'
 alias shipit='./lgtm create'
+alias qa='./run.sh manage.py test --settings=settings.gtrice'
 alias shell='./run.sh manage.py shell --settings=settings.gtrice --organization=1'
 alias dbshell='./run.sh manage.py dbshell --settings=settings.gtrice --cluster=shard3'
 alias tail='tail -f /var/log/fm/gtrice.log'
 alias celery='./scripts/start_celeryd.sh'
+alias pubsub='./scripts/start_pubsub_celeryd.sh'
+alias branchpr='./scripts/checkout_pr.sh'
 
 #---------------------------------
 # Git
@@ -39,6 +42,7 @@ alias push='git push origin'
 alias pushf='git push origin --force'
 alias rebase='git rebase upstream/master'
 alias stash='git stash'
+alias peepstash='git stash show -p'
 
 #---------------------------------
 # Dir
