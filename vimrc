@@ -1,6 +1,22 @@
-execute pathogen#infect()
 syntax on
-filetype plugin indent on
+" install vim-plug if we don't arlready have it
+if empty(glob("~/.vim/autoload/plug.vim"))
+    " Ensure all needed directories exist  (Thanks @kapadiamush)
+    execute 'mkdir -p ~/.vim/plugged'
+    execute 'mkdir -p ~/.vim/autoload'
+    " Download the actual plugin manager
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+
+filetype plugin indent on                   " required!
+call plug#end()
 
 let mapleader=","
 set encoding=utf-8
@@ -49,3 +65,17 @@ let g:syntastic_python_checkers = ['python', 'pyflakes', 'pep8']
 let g:syntastic_python_pep8_args="--ignore=E501,E121,E125,E126,E128,C0111"
 " Jump thought errors with :lnext and :lprev
 let g:syntastic_always_populate_loc_list = 1
+
+
+if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
+
+let g:airline_theme='zenburn'
