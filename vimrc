@@ -65,6 +65,12 @@ let g:syntastic_python_pep8_args="--ignore=E501,E121,E125,E126,E128,C0111"
 " Jump thought errors with :lnext and :lprev
 let g:syntastic_always_populate_loc_list = 1
 
+" Solarized stuff
+syntax enable
+let g:solarized_termtrans=1
+set background=dark
+colorscheme solarized
+
 
 if executable('ag')
     " Use ag over grep
