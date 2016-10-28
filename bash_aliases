@@ -25,6 +25,7 @@ alias dbshell='./run.sh manage.py dbshell --settings=settings.gtrice --cluster=s
 alias redshell='./run.sh manage.py redshift_shell --settings=settings.gtrice'
 alias shipit='lgtm create'
 alias sshme='ssh gtrice.dev.hearsaylabs.com'
+alias sshops='ssh ops.prod.pnw.hearsaylabs.com'
 alias tail='tail -f /var/log/fm/gtrice.log'
 
 #---------------------------------
