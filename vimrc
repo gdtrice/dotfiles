@@ -18,9 +18,20 @@ Plug 'rking/ag.vim'
 filetype plugin indent on                   " required!
 call plug#end()
 
+" ----------------------------------------------------------------------------
+"   Base Options
+" ----------------------------------------------------------------------------
+
 let mapleader=","
 set encoding=utf-8
-set ts=4 sw=4 expandtab
+set backupcopy=yes          " Fixes some node watching tools: http://stackoverflow.com/a/35583907/1263117 
+
+" ----------------------------------------------------------------------------
+"   Tabs
+" ----------------------------------------------------------------------------
+set tabstop=4				" Show tab as 4 spaces
+set shiftwidth=4			" Reindent as 4 spaces
+set expandtab				" Create spaces when I type <tab>
 
 
 " Use the same symbols as TextMate for tabstops and EOLs
