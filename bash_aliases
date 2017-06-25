@@ -49,3 +49,8 @@ alias peepstash='git stash show -p'
 # Dir
 #--------------------------------
 alias basha='vi ~/.bash_aliases'
+
+#---------------------------------
+# HSS Mac Local Env
+#--------------------------------
+alias macscreen='/usr/local/bin/screen'
