@@ -105,3 +105,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# mysql
+export PATH=/usr/local/mysql/bin/:$PATH
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/GitRepos
+source /usr/local/bin/virtualenvwrapper.sh
