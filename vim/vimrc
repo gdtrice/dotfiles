@@ -11,7 +11,9 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 
@@ -76,11 +78,12 @@ let g:syntastic_python_pep8_args="--ignore=E501,E121,E125,E126,E128,C0111"
 " Jump thought errors with :lnext and :lprev
 let g:syntastic_always_populate_loc_list = 1
 
-" Solarized stuff
+" Solarized settings
 syntax enable
 let g:solarized_termtrans=1
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme solarized8
 
 
 if executable('ag')
