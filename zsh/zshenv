@@ -1,0 +1,4 @@
+echo "sourcing zshenv..."
+. "$HOME/.cargo/env"
+export ANDROID_HOME=/Users/gtrice/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH

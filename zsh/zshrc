@@ -1,0 +1,23 @@
+#You want pyenv to run every time you open your prompt
+eval "$(pyenv init -)"
+# We want to regularly go to our virtual environment directory
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Projects
+
+# If in a given virtual environment, make a virtual environment directory
+# If one does not already exist
+mkdir -p $WORKON_HOME
+
+# Activate the new virtual environment by calling this script
+. ~/.pyenv/versions/3.8.2/bin/virtualenvwrapper.sh
+
+
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/Library/PostgreSQL/13/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
