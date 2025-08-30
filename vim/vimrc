@@ -1,4 +1,3 @@
-syntax on
 " install vim-plug if we don't arlready have it
 if empty(glob("~/.vim/autoload/plug.vim"))
     " Ensure all needed directories exist  (Thanks @kapadiamush)
@@ -11,7 +10,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
@@ -78,12 +77,11 @@ let g:syntastic_python_pep8_args="--ignore=E501,E121,E125,E126,E128,C0111"
 " Jump thought errors with :lnext and :lprev
 let g:syntastic_always_populate_loc_list = 1
 
-" Solarized settings
-syntax enable
-let g:solarized_termtrans=1
+" Theme settings
 set termguicolors
 set background=dark
-colorscheme solarized8
+colorscheme gruvbox8
+syntax enable
 
 
 if executable('ag')
