@@ -16,6 +16,9 @@ alias push='git push'
 alias stash='git stash'
 alias peepstash='git stash show -p'
 
+
+alias vim='nvim'
+alias vi='nvim'
 #---------------------------------
 # Heroku CLI
 #--------------------------------
