@@ -16,9 +16,14 @@ alias push='git push'
 alias stash='git stash'
 alias peepstash='git stash show -p'
 
-
+#---------------------------------
+# Misc
+#--------------------------------
+alias cel='celery -A svc worker -E -l INFO --pool=solo --purge'
 alias vim='nvim'
 alias vi='nvim'
+alias ng='ngrok http 8000 --url living-instantly-sunbeam.ngrok-free.app'
+
 #---------------------------------
 # Heroku CLI
 #--------------------------------
@@ -38,4 +43,10 @@ hconfig() {
   [ $# -ge 1 ] || { printf 'usage: hconfig <remote> [extra heroku opts]\n' >&2; return 2; }
   remote=$1; shift
   command heroku config --remote="$remote" "$@"
+}
+
+hmigrate() {
+  [ $# -ge 1 ] || { printf 'usage: hmigrate <remote> [extra heroku opts]\n' >&2; return 2; }
+  remote=$1; shift
+  command heroku run --remote="$remote" -- ./src/manage.py migrate "$@"
 }
