@@ -50,3 +50,14 @@ hmigrate() {
   remote=$1; shift
   command heroku run --remote="$remote" -- ./src/manage.py migrate "$@"
 }
+
+hbackups() {
+  local remote="$1"
+
+  [ -n "$remote" ] || {
+    printf 'usage: hbackups <remote>\n' >&2
+    return 2
+  }
+
+  command heroku pg:backups --remote "$remote"
+}
